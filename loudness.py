@@ -3,6 +3,8 @@ import soundfile as sf
 import pyloudnorm as pyln
 import extrair
 
+barulho = 20.0
+
 PATH = f'{extrair.OUTPUT_PATH}\\sounds\\'
 arrayAdicionados = []
 
@@ -20,7 +22,7 @@ with open(f"{PATH}adicionados.txt", "r") as txt:
                     try:
                         meter = pyln.Meter(rate)
                         loudness = meter.integrated_loudness(data)
-                        loudness_normalized_audio = pyln.normalize.loudness(data, loudness, +20.0)
+                        loudness_normalized_audio = pyln.normalize.loudness(data, loudness, +barulho)
                         sf.write(os.path.normpath(paths), loudness_normalized_audio, rate)
                     except:
                         erro = open(f"{PATH}erros.txt", "a")

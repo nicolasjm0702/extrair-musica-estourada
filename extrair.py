@@ -9,7 +9,10 @@ def extrairTextura():
     else:
         MC_ASSETS = os.path.expanduser(r"~/.minecraft/assets")
 
-    MC_VERSION = input("Versão do minecraft? Ex. 1.18, 1.5, 1.7\n") + ".json"
+    LATEST_MC_VERSION = os.listdir(MC_ASSETS+"/indexes/")[-1]
+    MC_VERSION = input(f"Versão do minecraft? Sua mais recente: {LATEST_MC_VERSION[:-5]}\n") + ".json"
+    if (MC_VERSION == '.json'):
+        MC_VERSION = LATEST_MC_VERSION
     print("A versão selecionada foi a " + MC_VERSION[:-5] + "\n")
 
 
