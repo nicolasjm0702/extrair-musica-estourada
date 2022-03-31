@@ -1,7 +1,6 @@
-import os
+import os, extrair
 import soundfile as sf
 import pyloudnorm as pyln
-import extrair
 
 barulho = 20.0
 

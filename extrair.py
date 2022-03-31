@@ -15,7 +15,6 @@ def extrairTextura():
         MC_VERSION = LATEST_MC_VERSION
     print("A versão selecionada foi a " + MC_VERSION[:-5] + "\n")
 
-
     MC_OBJECT_INDEX = f"{MC_ASSETS}/indexes/{MC_VERSION}"
     MC_OBJECTS_PATH = f"{MC_ASSETS}/objects"
     MC_SOUNDS = r"minecraft/sounds/"
